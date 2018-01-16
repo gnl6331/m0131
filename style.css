@@ -122,7 +122,7 @@ nav .container ul.main-nav li {
 nav .container ul.main-nav li a {
   display: block;
   text-decoration: none;
-  cursor: pointer;
+  cursor: default;
   padding: 0.8rem 1rem;
   color: #fff;
   transition: all 0.3s ease;
@@ -152,7 +152,7 @@ nav .container ul.main-nav li a.active, nav .container ul.main-nav li a:hover {
   padding: 1.475rem 2.425rem;
   margin: 0 0 1.875rem 0;
   box-shadow: 0px 10px 5px #e1e1dc;
-  cursor: pointer;
+  cursor: default;
 }
 
 span.title {

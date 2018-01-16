@@ -32,15 +32,6 @@
             <span class="date-location">{{ wedstrijd.clubZip}} {{wedstrijd.clubCity}}</span>
           </p>
         </div>
-        <div class="panel-content">
-          <h4>Aanwezige jeugdleiding:</h4>
-          <p><strong>Oefenleider: </strong>Wim</p>
-          <p><strong>Jeugdleiders: </strong>
-            <span class="assistance-lead">Jevgeni</span>
-            <span class="assistance-lead">Jan</span>
-            <span class="assistance-lead">Ria</span>
-          </p>
-        </div>
       </div>
       <div class="panel border-holiday" v-for="wedstrijd in wedstrijddata" v-if="wedstrijd.home === false">
         <div class="panel-heading">
@@ -59,15 +50,6 @@
             <span class="date-location">{{ wedstrijd.clubStreetname }} {{ wedstrijd.clubStreetnumber }}</span>
             <br>
             <span class="date-location">{{ wedstrijd.clubZip}} {{wedstrijd.clubCity}}</span>
-          </p>
-        </div>
-        <div class="panel-content">
-          <h4>Aanwezige jeugdleiding:</h4>
-          <p><strong>Oefenleider: </strong>Wim</p>
-          <p><strong>Jeugdleiders: </strong>
-            <span class="assistance-lead">Jevgeni</span>
-            <span class="assistance-lead">Jan</span>
-            <span class="assistance-lead">Ria</span>
           </p>
         </div>
       </div>
