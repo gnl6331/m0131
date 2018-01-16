@@ -1,0 +1,36 @@
+{
+    "wedstrijddata":[
+      {
+        "home": true,
+        "matchData": "12-01-2017",
+        "homeClub": "VV Asperen",
+        "awayClub": "VV Vuren",
+        "homeImage": "",
+        "awayImage": "",
+        "playTime": "10:30",
+        "arivalTime": "09:30",
+        "timeLeave": false,
+        "clubStreetname": "Leerdamseweg",
+        "clubStreetnumber": "39",
+        "clubZip": "4147BK",
+        "clubCity": "Asperen",
+        "laundryPerson": "Veronika"
+      },
+      {
+        "home": false,
+        "matchData": "19-01-2017",
+        "homeClub": "SC Everstein",
+        "awayClub": "VV Asperen",
+        "homeImage": "",
+        "awayImage": "",
+        "playTime": "10:30",
+        "arivalTime": false,
+        "timeLeave": "09:45",
+        "clubStreetname": "Groeneweg",
+        "clubStreetnumber": "63",
+        "clubZip": "1213BK",
+        "clubCity": "Everdingen",
+        "laundryPerson": "Arie"
+      }
+    ]
+  }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project MekMek</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="results-output" class="container">
+
+
+      <div class="panel border-excersize" v-for="wedstrijd in wedstrijddata" v-if="wedstrijd.home === true">
+        <div class="panel-heading">
+          <p class="heading-text">
+            <span class="title">{{ wedstrijd.matchData }} <br> {{ wedstrijd.homeClub }} - {{ wedstrijd.awayClub }}</span>
+          </p>
+          <p>
+            <span class="date-location" v-if="!wedstrijd.arivalTime === false"><strong>Tijd aanwezig: {{ wedstrijd.arivalTime }}</strong></span>
+            <br v-if="!wedstrijd.arivalTime === false">
+            <span class="date-location"><strong>Tijd spelen: {{ wedstrijd.playTime }}</strong></span>
+            <br>
+            <span class="date-location" v-if="!wedstrijd.timeLeave === false"><strong>Tijd vertrek: {{ wedstrijd.timeLeave }}</strong></span>
+            <br>
+            <span class="date-location"><strong>Shirtjes wassen: {{ wedstrijd.laundryPerson }}</strong></span>
+          </p>
+          <p class="heading-text"><span class="title">Adres gegevens</span></p>
+          <p>
+            <span class="date-location">{{ wedstrijd.clubStreetname }} {{ wedstrijd.clubStreetnumber }}</span>
+            <br>
+            <span class="date-location">{{ wedstrijd.clubZip}} {{wedstrijd.clubCity}}</span>
+          </p>
+        </div>
+        <div class="panel-content">
+          <h4>Aanwezige jeugdleiding:</h4>
+          <p><strong>Oefenleider: </strong>Wim</p>
+          <p><strong>Jeugdleiders: </strong>
+            <span class="assistance-lead">Jevgeni</span>
+            <span class="assistance-lead">Jan</span>
+            <span class="assistance-lead">Ria</span>
+          </p>
+        </div>
+      </div>
+      <div class="panel border-holiday" v-for="wedstrijd in wedstrijddata" v-if="wedstrijd.home === false">
+        <div class="panel-heading">
+          <p class="heading-text">
+            <span class="title">{{ wedstrijd.matchData }} <br> {{ wedstrijd.homeClub }} - {{ wedstrijd.awayClub }}</span>
+          </p>
+          <p>
+            <span class="date-location"><strong>Tijd spelen: {{ wedstrijd.playTime }}</strong></span>
+            <br>
+            <span class="date-location" v-if="!wedstrijd.timeLeave === false"><strong>Tijd vertrek: {{ wedstrijd.timeLeave }}</strong></span>
+            <br>
+            <span class="date-location"><strong>Shirtjes wassen: {{ wedstrijd.laundryPerson }}</strong></span>
+          </p>
+          <p class="heading-text"><span class="title">Adres gegevens</span></p>
+          <p>
+            <span class="date-location">{{ wedstrijd.clubStreetname }} {{ wedstrijd.clubStreetnumber }}</span>
+            <br>
+            <span class="date-location">{{ wedstrijd.clubZip}} {{wedstrijd.clubCity}}</span>
+          </p>
+        </div>
+        <div class="panel-content">
+          <h4>Aanwezige jeugdleiding:</h4>
+          <p><strong>Oefenleider: </strong>Wim</p>
+          <p><strong>Jeugdleiders: </strong>
+            <span class="assistance-lead">Jevgeni</span>
+            <span class="assistance-lead">Jan</span>
+            <span class="assistance-lead">Ria</span>
+          </p>
+        </div>
+      </div>
+
+
+    </div><!-- end of container -->
+    <script src="scripts/jquery-3.2.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+      const app = new Vue({
+        el : "#results-output",
+        data : {
+          wedstrijddata: []
+        },
+
+        created () {
+          fetch("data/wedstrijddata.json")
+            .then(response => response.json())
+            .then(json => {
+              this.wedstrijddata = json.wedstrijddata
+            })
+        },
+      });
+
+    </script>
+  </body>
+</html>
